@@ -45,7 +45,7 @@ This project is available as a **GitHub Action**, allowing you to generate detai
           days_inactive_threshold: 90
 
   # Uploads the CSV report of dormant developer users so it can be downloaded
-  - name: Upload activity report
+  - name: Upload contribution activity report
         uses: actions/upload-artifact@v4
         with:
           name: users-contribution-activity-report
@@ -75,7 +75,7 @@ jobs:
           org_names: org-name
           days_inactive_threshold: 90
 
-      - name: Upload activity report
+      - name: Upload contribution activity report
         uses: actions/upload-artifact@v4
         with:
           name: users-contribution-activity-report
