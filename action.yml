@@ -1,0 +1,41 @@
+name: User Contribution Activity Audit
+description: Generate detailed per-repository user activity reports across GitHub organizations
+author: Sandeep Doddamani
+
+branding:
+  icon: activity
+  color: blue
+
+inputs:
+  github_token:
+    description: GitHub token with read:org and repo permissions. You must create a GitHub secret (for example, `ORG_AUDIT_TOKEN`) and pass it explicitly to the action.
+    required: true
+
+  org_names:
+    description: Comma-separated GitHub organization names
+    required: true
+
+  days_inactive_threshold:
+    description: Days to consider a user inactive
+    required: false
+    default: "60"
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: "3.11"
+
+    - name: Install dependencies
+      run: pip install -r "${{ github.action_path }}/requirements.txt"
+      shell: bash
+
+    - name: Run User Contribution Activity Report
+      run: |
+        export GITHUB_TOKEN="${{ inputs.github_token }}"
+        export ORG_NAMES="${{ inputs.org_names }}"
+        export DAYS_INACTIVE_THRESHOLD="${{ inputs.days_inactive_threshold }}"
+        python "${{ github.action_path }}/users_contribution_activity.py"
+      shell: bash
