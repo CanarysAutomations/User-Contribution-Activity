@@ -30,7 +30,8 @@ This project is available as a **GitHub Action**, allowing you to generate detai
   - Most recent activity timestamp
 - Classifies users as:
   - **Active** – last activity within the configured inactivity threshold
-  - **Inactive** – no activity or activity older than the threshold
+  - **Inactive** – User has no recorded commits, issues, or pull requests,
+or their most recent activity is older than the configured threshold.
 - Generates a consolidated CSV report with per-repository user activity details.
 - Implements retry logic, timeouts, and rate-limit delays to ensure reliable execution against the GitHub GraphQL API.
 
@@ -38,13 +39,13 @@ This project is available as a **GitHub Action**, allowing you to generate detai
 
 ```yml
 - name: Run User Contribution Activity Report
-        uses: CanarysAutomations/User-Contribution-Activity@v1
-        with:
-          github_token: ${{ secrets.ORG_AUDIT_TOKEN }}
-          org_names: org-name
-          days_inactive_threshold: 90
+      uses: CanarysAutomations/User-Contribution-Activity@v1
+      with:
+        github_token: ${{ secrets.ORG_AUDIT_TOKEN }}
+        org_names: org-name
+        days_inactive_threshold: 90
 
-  # Uploads the CSV report of dormant developer users so it can be downloaded
+  # Uploads the CSV report of user contribution activity
   - name: Upload contribution activity report
         uses: actions/upload-artifact@v4
         with:
