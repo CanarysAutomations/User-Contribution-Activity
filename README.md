@@ -17,7 +17,8 @@ This project is available as a **GitHub Action**, allowing you to generate detai
 
 ## How It Works
 
-- Reads organization names, inactivity threshold, and authentication details from environment variables.
+- Reads organization names, inactivity threshold, and authentication details
+from GitHub Action inputs, which are passed to the script as environment variables internally.
 - Retrieves all members of each configured GitHub organization.
 - Fetches all non-fork repositories within the organization.
 - Enumerates all branches for each repository.
@@ -39,18 +40,18 @@ or their most recent activity is older than the configured threshold.
 
 ```yml
 - name: Run User Contribution Activity Report
-      uses: CanarysAutomations/User-Contribution-Activity@v1
-      with:
-        github_token: ${{ secrets.ORG_AUDIT_TOKEN }}
-        org_names: org-name
-        days_inactive_threshold: 90
+  uses: CanarysAutomations/User-Contribution-Activity@v1
+  with:
+    github_token: ${{ secrets.ORG_AUDIT_TOKEN }}
+    org_names: org-name
+    days_inactive_threshold: 90
 
   # Uploads the CSV report of user contribution activity
   - name: Upload contribution activity report
-        uses: actions/upload-artifact@v4
-        with:
-          name: users-contribution-activity-report
-          path: "*.csv"
+    uses: actions/upload-artifact@v4
+    with:
+      name: users-contribution-activity-report
+      path: "*.csv"
 
 ```
 
@@ -155,7 +156,7 @@ DAYS_INACTIVE_THRESHOLD=60
 ### Environment Variables
 
 - **GITHUB_TOKEN**: Your GitHub Personal Access Token
-  - Required scopes: `repo`, `read:org`, `read:user`
+  - Required scopes: `repo`, `read:org`
   - Note: This script uses GraphQL API, so ensure the token has appropriate permissions
 - **ORG_NAMES**: Comma-separated list of GitHub organization names to analyze
   - Example: `myorg1,myorg2,myorg3`
