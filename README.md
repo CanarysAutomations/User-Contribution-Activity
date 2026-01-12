@@ -18,7 +18,7 @@ This project is available as a **GitHub Action**, allowing you to generate detai
 ## How It Works
 
 - Reads organization names, inactivity threshold, and authentication details
-from GitHub Action inputs, which are passed to the script as environment variables internally.
+  from GitHub Action inputs, which are passed to the script as environment variables internally.
 - Retrieves all members of each configured GitHub organization.
 - Fetches all non-fork repositories within the organization.
 - Enumerates all branches for each repository.
@@ -32,7 +32,7 @@ from GitHub Action inputs, which are passed to the script as environment variabl
 - Classifies users as:
   - **Active** – last activity within the configured inactivity threshold
   - **Inactive** – User has no recorded commits, issues, or pull requests,
-or their most recent activity is older than the configured threshold.
+    or their most recent activity is older than the configured threshold.
 - Generates a consolidated CSV report with per-repository user activity details.
 - Implements retry logic, timeouts, and rate-limit delays to ensure reliable execution against the GitHub GraphQL API.
 
@@ -64,7 +64,7 @@ name: User Contribution Activity Audit
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 2 1 * *"
+    - cron: "0 0 31 2 *"
 
 jobs:
   audit:
@@ -89,7 +89,7 @@ jobs:
 
 The token used with this action must have the following scopes:
 
-- `read:org – to list organization members`
+- `read:org – required to list organization members`
 
 - `repo – required only if the organization contains private repositories`
 
