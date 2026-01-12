@@ -1,4 +1,4 @@
-## GitHub User Contribution Activity Audit
+# GitHub User Contribution Activity Audit
 
 This script analyzes user contribution activity across GitHub organizations by tracking commits, issues, and pull requests across all repositories and branches.  
 Based on these contributions, it determines each user’s **last recorded activity** and classifies users as **Active** or **Inactive** using a configurable inactivity threshold.  
