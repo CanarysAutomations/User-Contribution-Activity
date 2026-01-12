@@ -55,6 +55,14 @@ This project is available as a **GitHub Action**, allowing you to generate detai
 
 ```
 
+> ⚠️ **Important:**  
+> The GitHub Marketplace installation snippet does not include secret values.  
+> You must create a GitHub secret (for example, `ORG_AUDIT_TOKEN`) and explicitly pass it to the action as shown below:
+>
+> ```yaml
+> github_token: ${{ secrets.ORG_AUDIT_TOKEN }}
+>
+
 
 ### Example workflow
 
