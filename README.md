@@ -67,7 +67,7 @@ This project is available as a **GitHub Action**, allowing you to generate detai
 ### Example workflow
 
 ```yaml
-name: User Contribution Activity Audit
+name: user contribution activity audit
 
 on:
   workflow_dispatch:
