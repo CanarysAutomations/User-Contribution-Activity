@@ -1,4 +1,4 @@
-name: User Contribution Activity Audit
+name: user contribution activity audit
 description: Generate detailed per-repository user activity reports across GitHub organizations
 author: Sandeep Doddamani
 
@@ -32,7 +32,7 @@ runs:
       run: pip install -r "${{ github.action_path }}/requirements.txt"
       shell: bash
 
-    - name: Run User Contribution Activity Report
+    - name: Run user contribution activity report
       run: |
         export GITHUB_TOKEN="${{ inputs.github_token }}"
         export ORG_NAMES="${{ inputs.org_names }}"
