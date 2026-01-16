@@ -37,5 +37,5 @@ runs:
         export GITHUB_TOKEN="${{ inputs.github_token }}"
         export ORG_NAMES="${{ inputs.org_names }}"
         export DAYS_INACTIVE_THRESHOLD="${{ inputs.days_inactive_threshold }}"
-        python "${{ github.action_path }}/users_contribution_activity.py"
+        python "${{ github.action_path }}/user_contribution_activity.py"
       shell: bash
