@@ -1,4 +1,4 @@
-name: user contribution activity audit
+name: User contribution activity audit
 description: Generate detailed per-repository user activity reports across GitHub organizations
 author: Sandeep Doddamani
 
