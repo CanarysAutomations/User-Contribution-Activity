@@ -72,7 +72,7 @@ name: user contribution activity audit
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 0 31 2 *"
+    - cron: "0 2 1 * *"
 
 jobs:
   audit:
