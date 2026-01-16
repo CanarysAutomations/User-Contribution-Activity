@@ -175,7 +175,7 @@ DAYS_INACTIVE_THRESHOLD=60
 
 Run the script:
 ```bash
-python users_contribution_activity.py
+python user_contribution_activity.py
 ```
 
 ## Output
