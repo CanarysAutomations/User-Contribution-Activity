@@ -40,7 +40,7 @@ This project is available as a **GitHub Action**, allowing you to generate detai
 
 ```yml
 - name: Run user contribution activity report
-  uses: CanarysAutomations/User-Contribution-Activity@v1
+  uses: CanarysAutomations/User-Contribution-Activity@v1.0.0
   with:
     github_token: ${{ secrets.ORG_AUDIT_TOKEN }}
     org_names: org-name
@@ -79,7 +79,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run user contribution activity report
-        uses: CanarysAutomations/User-Contribution-Activity@v1
+        uses: CanarysAutomations/User-Contribution-Activity@v1.0.0
         with:
           github_token: ${{ secrets.ORG_AUDIT_TOKEN }}
           org_names: org-name
