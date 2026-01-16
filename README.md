@@ -39,8 +39,8 @@ This project is available as a **GitHub Action**, allowing you to generate detai
 ## Usage
 
 ```yml
-- name: Run User Contribution Activity Report
-  uses: CanarysAutomations/User-Contribution-Activity@v1
+- name: Run user contribution activity report
+  uses: CanarysAutomations/User-Contribution-Activity@v1.0.0
   with:
     github_token: ${{ secrets.ORG_AUDIT_TOKEN }}
     org_names: org-name
@@ -78,8 +78,8 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     steps:
-      - name: Run User Contribution Activity Report
-        uses: CanarysAutomations/User-Contribution-Activity@v1
+      - name: Run user contribution activity report
+        uses: CanarysAutomations/User-Contribution-Activity@v1.0.0
         with:
           github_token: ${{ secrets.ORG_AUDIT_TOKEN }}
           org_names: org-name
